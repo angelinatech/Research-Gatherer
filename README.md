@@ -51,6 +51,12 @@ When a user opens the application the Wikipedia research box will be visible as 
 The user may navigate to the available search options, which at the moment include Wikipedia, PubMed, a general News source API and Google. The user can also sign up for an account to save their collection under. Once logged in or signed up the user may research whatever they need to using the available searches and save them. Upon navigating to their collection page they will see their saved articles which they can delete, or edit the title of as wished. The user may then log out, though they will automatically be logged out after 12 hours. 
 
 The following are sample images of the working application's functionality:
+![1](https://github.com/angelinatech/Research-Gatherer/assets/130837613/c9753749-b1e9-4010-925f-8ad2fb44d6c1)
+![2](https://github.com/angelinatech/Research-Gatherer/assets/130837613/d99692fd-40b9-44e0-9602-fc972a268ffd)
+![3](https://github.com/angelinatech/Research-Gatherer/assets/130837613/e122e9f7-735b-4b3b-b598-175a6b68de8d)
+![Untitled design (1)](https://github.com/angelinatech/Research-Gatherer/assets/130837613/eb1ec31a-704f-45d8-8220-3c75af1a46aa)
+
+
 
 ## Credits
 
