@@ -1,0 +1,63 @@
+.youSureHunModal {
+  position: fixed;
+  display: flex;
+  padding: 1rem 2rem 2rem 2rem;
+  margin-top: 4rem;
+  flex-direction: column;
+  top: 35%;
+  left: 35vw;
+  width: 25vw;
+  height: 30vh;
+  top: -100vh;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  z-index: 10;
+  animation: modalAnimation 0.5s cubic-bezier(1, 0.49, 0.09, 1.29) forwards;
+}
+.youSureHunModal h2 {
+  position: relative;
+  top: 0vh;
+  border-radius: 12px;
+  font-size: 2rem;
+  color: var(--blueNorm);
+  background-color: rgba(245, 245, 245, 0.564);
+}
+.youSureHunModal::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #ee796e87 0%, #a2ccb68a 100%);
+  filter: blur(1px);
+  z-index: -1;
+}
+.nvmExitBtn,
+.yupExitBtn {
+  border: none;
+  margin-top: 0.5rem;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  background-image: linear-gradient(to right, var(--peachish), whiteSmoke);
+  font-size: 1em;
+}
+
+.nvmExitBtn i,
+.yupExitBtn i {
+  margin-right: 10px;
+}
+.yupExitBtn i {
+  color: var(--green);
+}
+.nvmExitBtn i {
+  color: var(--peach);
+}
+
+@media screen and (max-width: 850px) {
+  .youSureHunModal {
+    margin-top: 40vh;
+    width: 80vw;
+    left: 4vw;
+  }
+}

@@ -1,0 +1,129 @@
+:root {
+  --purplish: #c9c9c9;
+  --greenish: #c6ded0;
+  --peachish: #e8b5a0;
+  --yellowish: #e5cfa6;
+}
+
+.signup {
+  padding: 0.5rem 2rem;
+  width: 6rem;
+}
+.login {
+  padding: 0.5rem 2rem;
+  width: 5rem;
+}
+
+.searchBtn {
+  margin-top: 20px;
+  width: 12rem;
+  height: 2rem;
+}
+.searchBtn i {
+  color: var(--blueNorm);
+  margin-right: 10px;
+}
+.searchBtn,
+.modalBtn,
+.login {
+  background: linear-gradient(
+    to right,
+    var(--purplish) 0%,
+    var(--greenish) 30%,
+    var(--peachish) 80%,
+    var(--yellowish) 100%
+  );
+
+  background-size: 500%;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: var(--box-shadow);
+  color: var(--blueNorm);
+  cursor: pointer;
+  font-size: 1em;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.searchBtn::before,
+.modalBtn::before,
+.login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--purplish) 0%,
+    var(--greenish) 30%,
+    var(--peachish) 80%,
+    var(--yellowish) 100%
+  );
+  background-size: 400%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.searchBtn:hover::before,
+.modalBtn:hover::before,
+.signup:hover::before,
+.login:hover::before {
+  opacity: 1;
+  animation: colourEffect 1s 1 forwards;
+}
+
+@keyframes colourEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.signup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--yellowish) 0%,
+    var(--peachish) 30%,
+    var(--greenish) 80%,
+    var(--purplish) 100%
+  );
+  background-size: 400%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.signup {
+  background: linear-gradient(
+    to right,
+    var(--yellowish) 0%,
+    var(--peachish) 30%,
+    var(--greenish) 80%,
+    var(--purplish) 100%
+  );
+
+  background-size: 500%;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: var(--box-shadow);
+  color: var(--blueNorm);
+  cursor: pointer;
+  font-size: 1em;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+@media screen and (max-width: 850px) {
+}

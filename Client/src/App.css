@@ -1,0 +1,338 @@
+/* *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~* general app *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  */
+:root {
+  --blueLight: #8e9db5;
+  --blueMid: #6f88b3;
+  --blueNorm: #3e6bb1;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@font-face {
+  font-family: "linux_libertineregular";
+  src: url("./Assets/Fonts/linlibertine_r-webfont.woff") format("woff");
+}
+
+* {
+  font-family: "linux_libertineregular", "Noto Sans", sans-serif;
+  color: var(--greyDark);
+}
+
+html {
+  background-image: url("./Assets/Images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  min-height: 110%;
+}
+
+.App {
+  margin-top: 15vh;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 200%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+header {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  position: relative;
+  top: -10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+}
+.logoPic {
+  position: relative;
+  left: -6vh;
+  height: 200px;
+  width: 200px;
+  background-image: url("./Assets/Images/booksImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+  margin-top: 20px;
+}
+h1 {
+  font-size: 4em;
+  position: relative;
+  top: 11.5vh;
+}
+
+a {
+  color: var(--blueNorm);
+  text-decoration: none;
+}
+
+/* *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~* search bit *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  */
+
+.searchBox {
+  position: relative;
+  top: 3vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.searchBox input {
+  width: 50vw;
+  height: 40px;
+  border-radius: 15px;
+  outline: none;
+}
+
+#searchwikipedia,
+#searchWikipedia:active {
+  border: none;
+  background: linear-gradient(to right, var(--greenish), var(--purplish));
+  box-shadow: var(--box-shadow);
+  padding: 0px 5px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+}
+#searchwikipedia::placeholder {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--blue);
+}
+
+/* *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~* the boxessss *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  */
+
+.returnBox {
+  position: relative;
+  top: 4vh;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skeletonContainer {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.wikiContainer,
+.skeletonContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+  border-radius: 4px;
+  background-color: var(--antiFlashWhite);
+  box-shadow: var(--box-shadow);
+}
+
+.bottomCloseBtn {
+  position: relative;
+  margin-top: 0px;
+  padding: 12px;
+  border-radius: 15px;
+  z-index: 10;
+  width: 100%;
+  border: none;
+  box-shadow: var(--box-shadow);
+  background-image: linear-gradient(to right, var(--peachish), var(--purplish));
+  font-size: 1em;
+}
+
+/* *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~* error/loading msgs *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  */
+
+.noResults {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.errorMessage {
+  position: relative;
+  top: 5vh;
+  display: block;
+  font-size: 1rem;
+  margin: 2vh auto;
+  text-align: center;
+}
+
+.loadingMessage {
+  width: 5em;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1s steps(10) infinite normal,
+    Cursor 500ms steps(44) infinite normal;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5em;
+  }
+}
+@keyframes Cursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~* top bar buttons on returned items *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  */
+
+.topBar {
+  position: relative;
+  top: 0;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-image: linear-gradient(to right, var(--peachish), var(--purplish));
+}
+
+.saveBtn {
+  font-size: 0.6em;
+  color: var(--blueNorm);
+  margin-right: 0;
+}
+.editBtn {
+  margin-left: 0;
+}
+.topCloseBtn,
+.saveBtn,
+.deleteBtn,
+.editBtn {
+  display: relative;
+  background-color: transparent;
+  border: none;
+}
+.topCloseBtn i,
+.saveBtn i,
+.deleteBtn i,
+.editBtn i {
+  color: var(--peach);
+  font-size: 2em;
+}
+
+/* *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~* list items *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  */
+
+.list {
+  /* flex-wrap:wrap ; */
+  display: grid;
+  max-width: 90vw;
+  margin: 20px;
+  margin-top: 40px;
+  grid-template-columns: 30vw 30vw 30vw;
+  font-size: 1.7em;
+}
+
+.listItems {
+  margin: 10px;
+  max-width: 90vw;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  max-height: 650px;
+}
+.listItems:nth-child(odd) {
+  background-image: linear-gradient(to right, #e29fba 0%, #e2b09d 100%);
+}
+.listItems:nth-child(even) {
+  background-image: linear-gradient(to right, #e2b09d 0%, #e29fba 100%);
+}
+
+.listItems h4 {
+  margin: 0 2rem;
+}
+
+/* *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~* footer *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  */
+
+footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+}
+.copyright {
+  display: block;
+  color: var(--blueNorm);
+  text-align: center;
+}
+
+.emptyCollectionPage {
+  height: 60vh;
+}
+.emptyCollectionPage p {
+  margin: 0 10vw;
+  margin-top: 30%;
+}
+
+.collectionH1 {
+  text-transform: uppercase;
+  position:relative;
+  top:2vh;
+}
+
+/* *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~* smaller screens *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*  */
+
+@media screen and (max-width: 850px) {
+  body {
+    background-size: cover;
+  }
+  header {
+    position: relative;
+    top: -1vh;
+    flex-direction: column;
+    align-items: center;
+  }
+  header h1 {
+    font-size:3rem;
+    position: relative;
+    top: -1vh;
+    padding: 0 2rem;
+    margin-bottom: 10px;
+  }
+  .logoPic {
+    left: 0;
+  }
+  .list {
+    grid-template-columns: 1fr;
+    max-width: 90vw;
+  }
+  .searchBtn {
+    margin-top: 20px;
+  }
+  .returnBox,
+  .wikiContainer,
+  .skeletonContainer {
+    max-width: 90vw;
+  }
+  .searchBox {
+    top: 3vh;
+  }
+  .collectionH1{
+    text-transform: uppercase;
+    font-size:3rem;
+    margin: 2rem;
+    top:4vh;
+  }
+
+}

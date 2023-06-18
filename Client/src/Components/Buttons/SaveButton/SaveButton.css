@@ -1,0 +1,62 @@
+.beenSavedModal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0rem;
+  z-index: 10;
+  top: 35vh;
+  left: 35vw;
+  width: 25vw;
+  height: 30vh;
+  top: -100vh;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  animation: modalAnimation 0.5s cubic-bezier(1, 0.49, 0.09, 1.29) forwards;
+}
+
+.beenSavedModal::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #ee796e87 0%, #a2ccb68a 100%);
+  filter: blur(1px);
+  z-index: -1;
+}
+
+@keyframes modalAnimation {
+  0% {
+    top: -100vh;
+  }
+  100% {
+    top: 20vh;
+  }
+}
+.saveModalExitBtn {
+  position: relative;
+  top: -18vh;
+  left: 10vw;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+}
+.saveModalExitBtn i {
+  color: var(--peach);
+}
+
+@media screen and (max-width: 850px) {
+  .beenSavedModal {
+    margin-top: 20vh;
+    height:30vh;
+    top: 50vh;
+    width: 80vw;
+    left: 10vw;
+    background-color: white;
+  }
+  .saveModalExitBtn {
+    top:-20vh;
+    left:33vw;
+  }
+}

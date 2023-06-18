@@ -1,0 +1,54 @@
+.editBtn {
+}
+.editModal {
+  display: flex;
+  flex-direction: column;
+}
+.editModal h2 {
+  position: relative;
+  display: block;
+  top: -2vh;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  color: var(--blueNorm);
+}
+
+.titleInput {
+  position: relative;
+  display: block;
+  top: -2vh;
+  border-radius: 12px;
+  border: none;
+  box-shadow: var(--box-shadow);
+  display: block;
+  width: 90%;
+  height: 1rem;
+  padding: 1rem;
+  background-color: #e5cfa6e8;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+.titleInput:focus {
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.cancelEditBtn,
+.confirmEditBtn {
+  position: relative;
+  top: -2vh;
+  border: none;
+  margin-top: 0.5rem;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  background-image: linear-gradient(to right, var(--peachish), whiteSmoke);
+  font-size: 1em;
+}
+.confirmEditBtn,
+.confirmEditBtn i {
+  color: var(--green);
+}
+.cancelEditBtn,
+.cancelEditBtn i {
+  color: var(--peach);
+}
